@@ -1,0 +1,363 @@
+*{
+    padding: 0;margin: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+    outline: none;
+    font-family: monospace;
+}
+.container{
+    max-width: 1200px;
+    width: 95%;
+    margin: 0 auto;
+}
+/* ------------------------------- Start List */
+.list{
+    background-color: #eee;
+    box-shadow: 0 5px 10px rgba(0,0,0,.1);
+    width: 320px;
+    left: -320px;
+    height: 100vh;
+    padding: 50px 0 0 20px;
+    position: absolute;
+    transition: all 0.3s ease;
+    z-index: 9999;
+    top: 0;
+}
+.list.active{
+    left: 0px;
+}
+.list ul li{
+    padding-bottom: 15px;
+}
+.list ul li a{
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    padding: 10px;
+    border-left: 5px solid transparent;
+    transition: all 0.3s ease;
+}
+.list ul li a:hover,
+.list ul li a.active{
+    border-left: 5px solid crimson;
+    color: crimson;
+}
+.list #bars{
+    position: absolute;
+    right: -39px;
+    top: 20px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: #eee;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.list #bars:hover,
+.list #bars.active{
+    background-color: crimson;
+    color: #fff;
+}
+
+
+/* ------------------------------ Start Input */
+.pas{
+    display: flex;
+    top: 0;
+    width: 400px;
+    margin: 100px auto;
+    position: relative;
+    height: 40px;
+}
+#input{
+    width: 80%;
+    padding: 0px 0px 0px 10px;
+    background-color: #eee;
+    border:1px solid cornflowerblue;
+    outline: none;
+}
+.pas button{
+    width: 20%;
+    background-color: cornflowerblue;
+    color: #fff;
+    height: 100%;
+    border: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.pas button:hover{
+    opacity: 0.8;
+}
+
+/* ------------------------- Start One Tow Three */
+.main{
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #eee;
+    padding: 50px 20px;
+}
+
+.main .top{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+.main .top .btn{
+    background-color: #fff;
+    padding: 5px 30px;
+    color: #333;
+    cursor: pointer;
+}
+.main .top .btn:hover,
+.main .top .btn.active{
+    background-color: crimson;
+    color: #fff;
+}
+.main .botton p{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background-color: #fff;
+    text-align: center;
+    display: none;
+    animation: main 0.5s linear;
+}
+@keyframes main {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+.main .botton p.active{
+    display: block;
+}
+
+
+/* -------------------------------------- Start Plus */
+/* .plus-box{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    padding: 100px 0;
+}
+.plus .plus-item{
+    background-color: #eee;
+    padding: 50px 20px;
+    text-align: center;
+    margin: 5px;
+}
+.plus .plus-item .top{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #fff;
+}
+.plus .plus-item button{
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    background-color: #ccc;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.plus .plus-item button:hover,
+.plus .plus-item button.activeC{
+    color: #fff;
+    background-color: crimson;
+}
+
+
+.plus .plus-item .bottom{
+    padding: 20px;
+    background-color: #fff;
+    margin-top: 20px;
+    visibility: hidden;
+}
+.plus .plus-item .bottom.active{
+    visibility: inherit;
+} */
+main{
+    padding: 150px 0;
+    text-align: center;
+}
+.faq{
+    width: 80%;
+    max-width: 800px;
+    margin: auto;
+}
+.faq-heading{
+    border-bottom: #777;
+    padding: 30px 60px;
+}
+.faq-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.hr-line{
+    width: 80%;
+    max-width: 800px;
+    margin: auto;
+}
+
+.faq-page{
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 30px 20px;
+    width: 100%;
+    border: none;
+    outline: none;
+    margin: auto;
+}
+.faq-body{
+    margin: auto;
+    padding: 10px 20px;
+}
+.faq-page.active,
+.faq-page:hover{
+    background-color: crimson;
+    color: #fff;
+}
+.faq-body{
+    padding: 30px 0;
+    background-color: #fff;
+    display: none;
+    overflow: hidden;
+}
+.faq.active .faq-body{
+    display: block;
+}
+.faq-page::after{
+    content: '\02795';
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+}
+/* .faq-page.active::after{
+    content: "\2796";
+}
+ */
+
+
+
+/* ----------------------------------- Start Gallery */
+.gallery{
+    margin: 50px 0;
+}
+.gallery .container{
+    max-width: 1200px;
+    width: 95%;
+    margin: 0 auto;
+}
+.gallery .gallery-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0 50px;
+}
+.gallery .gallery-list .btn{
+    background-color: transparent;
+    border: none;
+    padding: 5px 20px;
+    border: 1px solid #999;
+    color: #999;
+    border-radius: 4px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.gallery .gallery-list .btn:hover,
+.gallery .gallery-list .btn.active{
+    background-color: crimson;
+    color: #fff;
+    border-color: crimson;
+}
+.gallery .gallery-img{
+    columns: 4 280px;
+}
+.gallery .gallery-img .gallery-item{
+    width: 100%;
+    background-color: #eee;
+    border: 5px;
+    margin: 10px;
+    position: relative;
+    /* transition: all 0.5s ease; */
+}
+.gallery .gallery-img .gallery-item img{
+    width: 100%;
+}
+/* 
+.main .gallery-img .gallery-item .overflow{
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.main .gallery-img .gallery-item:hover .overflow{
+    opacity: 1;
+}
+.main .gallery-img .gallery-item .overflow h3{
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 30px;
+    border: 1px solid #fff;
+}
+.main .gallery-img .gallery-item .overflow h3:hover{
+    background-color: crimson;
+}
+.main .gallery-img .gallery-item .overflow .like{
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    color: #fff;
+}
+.main .gallery-img .gallery-item .overflow .like i{
+    margin-right: 5px;
+    transition: all 0.3s ease;
+}
+.main .gallery-img .gallery-item i.active{
+    color: crimson;
+    transform: scale(1.3);
+    
+} */
+
+
+.popup{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    left: 0;
+    top: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.popup img{
+    max-width: 400px;
+}
