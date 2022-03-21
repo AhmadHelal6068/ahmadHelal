@@ -45,21 +45,6 @@ BtnT.forEach(btn => {
 
 
 // ------------------------------ Start Plus Div
-// var faq = document.getElementsByClassName("faq-page");
-// var i;
-// for(i=0; i<faq.length; i++){
-//     faq[i].addEventListener("click", function(){
-//         this.classList.toggle("active");
-
-//         // var body = this.nextElementSibling;
-//         var body = document.getElementsByClassName("faq-body");
-//         if(body.style.display === "block"){
-//             body.style.display = "none";
-//         }else{
-//             body.style.display = "block";
-//         }
-//     });
-// }
 let faq = document.querySelectorAll(".faq");
 let faqPage = document.querySelector(".faq-page");
 
@@ -130,6 +115,8 @@ popupImg.onclick = () => {
 
 
 
+
+//----------------------------- Start Date
 let countDate = new Date("Mar 31, 2022 23:59:59").getTime();
 // console.log(countDate);
 
@@ -161,74 +148,7 @@ let counter = setInterval(() => {
 }, 1000);
 
 
-
-// ------------------------------------- Start Slider
-// let slideContainer = document.querySelectorAll(".slide-container");
-// let index = 0;
-// function next(){
-//     slideContainer[index].classList.remove("active");
-//     index = (index + 1) % slideContainer.length;
-//     slideContainer[index].classList.add("active");
-// }
-// function prev(){
-//     slideContainer[index].classList.remove("active");
-//     index = (index - 1 + slideContainer.length) % slideContainer.length;
-//     slideContainer[index].classList.add("active");
-// }
-// let bul = document.querySelectorAll(".bulean #bul");
-// bul.forEach(click => {
-//     click.onclick = () => {
-//         bul.forEach(remove => {
-//             remove.classList.remove("active");
-//             dataSlide = click.getAttribute("data-bul");
-
-//             slideContainer.forEach(btn => {
-//                 var dataBul = btn.getAttribute("data-slide");
-//                 if(dataSlide == dataBul){
-//                     btn.classList.add("active");
-//                     prev();
-//                     next();
-//                 }else{
-//                     btn.classList.remove("active");
-//                 }
-//             })
-//         });
-//         click.classList.add("active");
-//     }
-// })
-
-// 
-
-// var slideIndex = 1;
-// showSlides(slideIndex);
-
-// function plusSlides(n) {
-//     showSlides(slideIndex += n);
-// }
-// function currentSlide(n) {
-//     showSlides(slideIndex = n);
-// }
-// function showSlides(n) {
-//     var i;
-//     var slide = document.getElementsByClassName("mySlide");
-//     var dots = document.getElementsByClassName("dot");
-
-//     if(n > slide.length){
-//         slideIndex = 1;
-//     }
-//     if(n < 1){
-//         slideIndex = slide.length;
-//     }
-//     for(i=0; i<slide.length; i++){
-//         slide[i].style.display = "none";
-//     }
-//     for(i=0; i<dots.length; i++){
-//         dots[i].className = dots[i].className.replace(" activeA", "");
-//     }
-//     slide[slideIndex-1].style.display = "block";
-//     dots[slideIndex-1].className += "activeA";
-// }
-
+// ------------------------------- Slider And Bull
 var img = 1;
 displayimg(img);
 
@@ -259,3 +179,28 @@ function displayimg(n){
     image[img - 1].style.display = "block";
     dots[img - 1].className += " color";
 }
+
+
+// ------------------------- Start Section
+var sectionBtn = document.querySelectorAll(".btn");
+var sectionBox = document.querySelectorAll(".box");
+
+sectionBtn.forEach(btn => {
+    btn.onclick = () => {
+
+        sectionBtn.forEach(remove => {
+            remove.classList.remove("active");
+            dataSection = btn.getAttribute("data-section");
+            sectionBox.forEach(item => {
+                var dataBox = item.getAttribute("data-text");
+
+                if(dataSection == dataBox){
+                    item.style.display = "block";
+                }else{
+                    item.style.display = "none";
+                }
+            })
+        });
+        btn.classList.add("active");
+    }
+})

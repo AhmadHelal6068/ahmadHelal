@@ -667,26 +667,105 @@ main{
     opacity: 1;
     z-index: 5;
 }
-/* 
-.left{
-    animation: left 0.5s linear;
+
+/* ---------------------------------- Start section Item */
+.section{
+    padding: 100px 0;
 }
-.right{
-    animation: right 0.5s linear;
+.section-box{
+    width: 100%;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #eee;
 }
-@keyframes left {
+.section-box .left{
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 30%;
+    border-right: 1px solid #777;
+}
+.section-box .left .btn{
+    color: #333;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 2;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+.section-box .left .btn.active,
+.section-box .left .btn:hover{
+    padding-left: 10px;
+    color: crimson;
+}
+.section-box .left .btn .i_Ro{
+    padding-left: 7px;
+    transition: all 0.4s ease;
+}
+.section-box .left .btn.active .i_Ro,
+.section-box .left .btn:hover .i_Ro{
+    transform: rotate(-90deg);
+}
+
+
+.section-box .right{
+    flex-basis: 0 0 70%;
+    padding-left: 50px;
+}
+.section-box .right .box{
+    position: relative;
+    display: none;
+    animation: ani 0.4s linear;
+}
+.section-box .right .box.active{
+    display: block;
+}
+.section-box .number-text{
+    position: absolute;
+    right: 10%;
+    top: 10%;
+    background-color: crimson;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    animation: ani .5s linear;
+}
+
+.section-box .right .box h3{
+    font-weight: bold;
+    color: #333;
+    font-size: 25px;
+    padding: 30px 0 10px;
+    animation: ani 0.8s linear;
+}
+.section-box .right .box p{
+    color: #888;
+    animation: ani 0.9s linear;
+}
+@keyframes ani {
     0%{
-        transform: translateX(0);
-    }
-    100%{
-        transform: translateX(-100%);
-    }
-}
-@keyframes right {
-    0%{
-        transform: translateX(0);
-    }
-    100%{
         transform: translateX(100%);
     }
-} */
+    100%{
+        transform: translateX(0%);
+    }
+}
+@media(max-width:767px){
+    .section-box{
+        flex-direction: column;
+    }
+    .section-box .left,
+    .section-box .right{
+        flex-basis: 100%;
+    }
+    .section-box .left{
+        padding-bottom: 50px;
+        border: none;
+        border-bottom: 1px solid #777;
+    }
+    .section-box .right{
+        padding: 0;
+        padding-top: 50px;
+    }
+}
